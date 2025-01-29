@@ -1,0 +1,54 @@
+const express = require('express');
+const app = express();
+const PORTNO = 8060;
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
+
+app.get('/', (req, res) => {
+    res.send(`
+    <form action="/Upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image_add" >
+        <input type="file" name="image_add1" >
+        <input type="file" name="image_add2" >
+        <input type="submit">
+    </form>`);
+});
+
+const storage = multer.diskStorage({
+    destination: './Upload',
+    filename: (req, file, cb) => {
+       return cb(null, `IMAGE__${Date.now()}${path.extname(file.originalname)}`);
+    }
+});
+const storage1 = multer.diskStorage({
+    destination: './Upload1',
+    filename: (req, file, cb) => {
+      return cb(null, `IMAGE__${Date.now()}${path.extname(file.originalname)}`);
+    }
+});
+const storage2 = multer.diskStorage({
+    destination: './Upload2',
+    filename: (req, file, cb) => {
+       return cb(null, `IMAGE__${Date.now()}${path.extname(file.originalname)}`);
+    }
+});
+
+const Upload = multer({ storage: storage });
+const Upload1 = multer({ storage: storage1 });
+const Upload2 = multer({ storage: storage2 });
+
+app.use('/Upload', express.static('Upload'));
+app.use('/Upload1', express.static('Upload1'));
+app.use('/Upload2', express.static('Upload2'));
+
+app.post('/Upload', Upload.single('image_add'), (req, res) => {
+    res.send(` <img src="http://localhost:${PORTNO}/Upload/${req.file.filename}" alt="" width="200" height="200">
+    <img src="http://localhost:${PORTNO}/Upload1/${req.file.filename}" alt="" width="200" height="200">
+    <img src="http://localhost:${PORTNO}/Upload2/${req.file.filename}" alt="" width="200" height="200">`);
+});
+
+
+app.listen(PORTNO, () => {
+    console.log(`Server is running on port ${PORTNO}`);
+});
