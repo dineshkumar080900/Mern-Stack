@@ -1,0 +1,114 @@
+/*TOp First nave Bat */
+
+.top_head{
+    background-color: #788a2f;
+    margin: 0px;
+    font-size: 12px;
+}
+.bg-light{
+    background-color: rgb(167, 225, 173);
+}
+#user{
+    display: none;
+}
+nav{
+    background-color:#edf2d9		;
+}
+nav img{
+    height: 70px;
+
+    width: 100%;
+}
+.formnotshow{
+    left: 0px;
+}
+.imgnav{
+    display: inline;
+}
+.navbar-nav{
+    margin-left: 230px;
+}
+.nav-link{
+    font-size: 20px;
+
+}
+.mobile_reposiveserch{
+    display: none;
+}
+.input_search{
+    border-radius: 160px;
+}
+
+#next,#next{
+    height: 300px;
+}
+
+/* Meadia Queary  */
+@media only screen and (max-width: 360px) {
+    .navbar-brand img{
+        margin-right: 60px!important;
+        height: 100px;
+        width: 100px;
+    }
+    #user{
+        display: inline;
+    }
+    .formnotshow{
+        left: 5px;
+    }
+  }
+
+  @media only screen and (max-width: 375px) {
+    .navbar-brand img{
+        margin-right: 0px!important;
+        height: 100px;
+        width: 100px;
+    }
+    .navbar-nav{
+        margin-left: 0px;
+    }
+    .formnotshow{
+        left: 5px;
+    }
+  }
+
+  @media only screen and (max-width: 395px) {
+    .navbar-brand img{
+        margin-right: 0px;
+        height: 100px;
+        width: 100px;
+    }
+    #user{
+        display: inline;
+    }
+    .navbar-nav{
+        margin-left: 0px;
+    }
+    .mobile_reposive_window{
+        display: none;
+    }
+    .formshow form{
+    display: none;
+    }
+    .mobile_reposiveserch{
+        display: flex;
+    }
+    .fa-solid{
+        font-size: 30px;
+        margin: 10px;
+        margin-top: 0px;
+        color: gold;
+        font-weight: 900;
+
+    }
+    .input_search{
+        border-radius: 60px;
+        height: 30px;
+        width: 100%;
+        border-color: rgb(255, 255, 255);
+        background-color: white;
+        border: 0px;
+    }
+  }
+
+
