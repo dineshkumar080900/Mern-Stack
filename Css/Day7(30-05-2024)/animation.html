@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        div{
+            height: 100px;
+            white-space: center;
+            width: 100px;
+            /* background-image: url("../../Html\ Activity/1.png"); */
+            background-color: red;
+            animation-name: ani;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes ani{
+            0% {
+                background-color:red; 
+                margin-left:0px; 
+                margin-top:0px;}
+            25%  {
+                background-color:yellow;
+                 margin-left:200px; 
+                 margin-top:0px;}
+            50%  {
+                background-color:blue; 
+                margin-left:200px; margin-top:200px;}
+            75%  {background-color:green; 
+                margin-left:0px; 
+                margin-top:200px;}
+            100% {background-color:red; margin-left:0px; margin-top:0px;}
+        }
+    </style>
+<body>
+    <div></div>
+    
+</body>
+</html>
