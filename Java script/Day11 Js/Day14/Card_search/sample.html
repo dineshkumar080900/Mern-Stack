@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+        function Animal(name) {
+        this.name = name;
+}
+
+Animal.prototype.speak = function() {
+  console.log(`${this.name} makes a noise.`);
+};
+
+function Dog(name) {
+  Animal.call(this, name); // Call the Animal constructor
+}
+
+Dog.prototype = Object.create(Animal.prototype); // Set the prototype chain
+Dog.prototype.constructor = Dog; // Restore the constructor reference
+
+Dog.prototype.speak = function() {
+  console.log(`${this.name} barks.`);
+};
+
+const dog = new Dog('Rex');
+dog.speak(); // Rex barks.
+
+    </script>
+    
+</body>
+</html>

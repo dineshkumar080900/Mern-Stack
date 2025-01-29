@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   
+.head{
+    height: 400px;
+    width: 100%;
+    background-color: rgb(107, 70, 70);
+    border: 2px dashed black;
+    border-radius: 50px;
+}
+</style>
+
+
+<body>
+
+
+<div class="head">
+   <center>
+
+    <div class="ga">
+
+        <label for="samp">
+            <img src="about-2 copy.jpg" width="100" height="100" alt="" id="image"  style="
+    margin-top: 160px;
+">
+        </label>
+            </div>
+</center>
+</div>
+
+
+
+
+
+<input type="file" id="samp" hidden>
+
+<script>
+    var imag=document.querySelector("#samp");
+    imag.addEventListener('change',(e)=>{
+        var filname=URL.createObjectURL(e.target.files[0]);
+document.querySelector('#image').src=filname;
+})
+</script>
+    
+</body>
+</html>

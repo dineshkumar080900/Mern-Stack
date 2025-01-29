@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="click">Click</button>
+    <button class="ae">Add Event</button>
+    <button class="re">Remove Event</button>
+    <button class="de">Default</button>
+    <div class="text"></div>
+</body>
+</html>
+
+<script>
+    function click(){
+        document.querySelector(".text").innerHTML+="Hello<br>"
+    }
+    document.querySelector(".ae").addEventListener("click",add)
+    function add(){
+    document.querySelector(".click").addEventListener("click",click)
+        
+    }
+    document.querySelector(".re").addEventListener("click",remove)
+    function remove(){
+    document.querySelector(".click").removeEventListener("click",click)
+        
+    }
+    document.querySelector(".de").addEventListener("click",default1)
+    function default1(){
+    document.querySelector(".click").removeEventListener("click",click)
+    document.querySelector(".text").innerHTML=""
+
+
+    }
+    
+</script>

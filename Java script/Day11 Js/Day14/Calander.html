@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock and Day</title>
+    <style>
+        .clock {
+            height: 500px;
+            width: 100%;
+            /* background-color: #4287f5; */
+            margin: 100px 20px;
+            border-radius: 30px;
+            color: white;
+            text-align:left;
+            opacity: 2rem;
+            font-size: 2em;
+            line-height: 1.5em;
+            display: flex;
+            background-image: url("https://img.freepik.com/free-photo/sahara-desert-sunlight-blue-sky-morocco-africa_181624-27461.jpg?t=st=1722496172~exp=1722499772~hmac=d97f4dda4cf30cf95dbb0a9ef2c97e5c9e2114a27c4cd96930e63960aba595ac&w=1480");
+        }
+        .cen{
+            height: 2px;
+            width: 2px;
+            margin: 100px;
+            padding-top: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="cen">
+            <div class="time">
+                <span id="hours"></span>:<span id="minutes"></span>:<span id="sec"></span>
+            </div>
+            
+            <span id="day"></span>/<span id="mon"></span>/<span id="no"></span>
+    
+        </div>
+        
+    <script>
+        function updateTime() {
+            const now = new Date();
+            let hour = now.getHours().toString().padStart(2, '0'); 
+            let minute = now.getMinutes().toString().padStart(2, '0'); 
+            let dayIndex = now.getDay();
+            let dayIndex1 = now.getMonth();
+            let dayIndex2 = now.getDate();
+            let dayIndex3 = now.getSeconds();
+            let dayName;
+            switch (dayIndex) {
+                case 0:
+                    dayName = 'Sunday';
+                    break;
+                case 1:
+                    dayName = 'Mon';
+                    break;
+                case 2:
+                    dayName = 'Tue';
+                    break;
+                case 3:
+                    dayName = 'Wed';
+                    break;
+                case 4:
+                    dayName = 'Thu';
+                    break;
+                case 5:
+                    dayName = 'Fri';
+                    break;
+                case 6:
+                    dayName = 'Sat';
+                    break;
+                default:
+                    dayName = 'Unknown'; 
+                    break;
+            }
+            let monthName;
+            switch (dayIndex1) {
+                case 0:
+                    monthName = 'Jan';
+                    break;
+                case 1:
+                    monthName = 'Feb';
+                    break;
+                case 2:
+                    monthName = 'Mar';
+                    break;
+                case 3:
+                    monthName = 'Apr';
+                    break;
+                case 4:
+                    monthName = 'May';
+                    break;
+                case 5:
+                    monthName = 'Jun';
+                    break;
+                case 6:
+                    monthName = 'Jul';
+                    break;
+                case 7:
+                    monthName = 'Aug';
+                    break;
+                case 8:
+                    monthName = 'Sep';
+                    break;
+                case 9:
+                    monthName = 'Oct';
+                    break;
+                case 10:
+                    monthName = 'Nov';
+                    break;
+                case 11:
+                    monthName = 'Dec';
+                    break;
+                default:
+                    monthName = 'Unknown'; 
+                    break;
+            }
+
+
+            document.getElementById('hours').innerHTML = hour;
+            document.getElementById('minutes').innerHTML = minute;
+            document.getElementById('sec').innerHTML = dayIndex3;
+            document.getElementById('day').innerHTML = `${dayName}`;
+            document.getElementById('mon').innerHTML = `${monthName}`;
+            document.getElementById('no').innerHTML = `${dayIndex2}`;
+        }
+
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
+

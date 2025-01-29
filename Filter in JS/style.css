@@ -1,0 +1,54 @@
+:root{
+    --thead-color: rgb(0, 0, 0);
+    --stripe-color: rgb(233, 233, 233);
+    --border-color: rgb(238, 238, 238);
+    --input-box-color: rgb(152, 152, 152);
+    --heading-color: rgb(255, 255, 255);
+}
+
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    border:2px solid var(--border-color);
+}
+td{
+    height:40px;
+}
+th{
+    text-align:left;
+    padding:8px 20px;
+    height:40px;
+    border:2px solid var(--border-color);
+    background-color:var(--thead-color);
+    color:var(--heading-color);
+}
+input{
+    width:97%;
+    height:40px;
+    border:1px solid var(--input-box-color);
+    margin-bottom:20px;
+    padding-left:30px;
+}
+body{
+    margin:5%;
+}
+tr:nth-child(odd){
+    background-color:var(--stripe-color);
+}
+.myDiv{
+    width:100%;
+}
+.no-result{
+    text-align:center;
+    padding:20px 10px;
+    background-color:var(--thead-color);
+    color:var(--heading-color);
+}
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+td{
+    padding:8px 20px;
+    border:2px solid var(--border-color);
+}

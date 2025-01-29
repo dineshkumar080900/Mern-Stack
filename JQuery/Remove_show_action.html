@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove and show action</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    *{
+        border: 0px;
+        padding: 0px;
+    }
+    .fa-solid{
+       display: block;
+    }
+    .ff p{
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    }
+    
+    .paragro{
+        display: flex;
+        background-color: silver;
+        margin: 30px;
+        /* width: 100%; */
+    width: 1000px;
+    height: 242px;
+
+        /* height: 300px; */
+    }
+    .ta{
+        margin: 30px;
+    }
+    .paragro p ,.btn{
+        padding: 20px 10px;
+    }
+    p{
+        padding-bottom: 0px;
+    margin-bottom: 0px;
+    }
+</style>
+<body>
+    <div class="ta">
+        <div class="paragro">
+            <div class="ff"><p>Imagine checking one place for your travel details and getting a heads up as things happen throughout your trip. See why life without TripIt is a distant memory for millions of travelers</p>
+                <p>Imagine checking one place for your travel details and getting a heads up as things happen throughout your trip. See why life without TripIt is a distant memory for millions of travelers</p>
+                <p>Imagine checking one place for your travel details and getting a heads up as things happen throughout your trip. See why life without TripIt is a distant memory for millions of travelers</p>
+                </div>
+            <div class="row">
+                <div class="col-12">
+                     <div id="sas" class="btn btn-success col-12">Hide<i class="fa-solid fa-minus"></i></div>
+            <div id="sas1" class="btn btn-primary col-12">show <i class="fa-solid fa-eye"></i></div>
+            <div id="sas2" class="btn btn-danger col-12">Remove<i class="fa-solid fa-trash"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        $("#sas").click(function(){
+            $('p').css({background:"red"})
+            $("p").hide();
+            $('p').css({width:"200px"})
+            $('.paragro').css({'padding-left':"796px"})
+        }) 
+        $("#sas1").click(function(){
+            $('.paragro').css({'padding-left':"0px"})
+
+            $('p').css({background:"#3a4b66" ,color:"white",width:"856.391px"})
+            $("p").show();
+            // $('p').css({background:"white"})
+        })
+        $("#sas2").click(function(){
+            $('p').css({background:"#3a4b66" ,color:"white"})
+            $("p").remove();
+            $('body').hide();
+            // $('p').css({background:"white"})
+        })          
+    });
+</script>

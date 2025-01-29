@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+<style>
+    i{
+        font-size: 60px;
+        color: black;
+    }
+    .bg-red{
+        margin-top: 10px;
+        padding: 60px;
+        background-image: linear-gradient(to right, #4bad34,#33b871 );
+
+    }
+    .col-3{
+        padding-left: 20px;
+    }
+
+    .s1, .s2, .s3, .s4{
+        border: 20px solid red;
+    }
+    .vl{
+    content: "";
+    height: 100%;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.col-3{
+    border-right: 2px dotted gray;
+}
+  
+
+</style>
+</head>
+<body>
+    <div class="container-fluid bg-red">
+        <div class="container ">
+            <div class="row text-center bg-red p-6 ">
+               
+                <div class="col-3">
+                    <i class="fa-solid fa-users"></i>
+                    <h2 class="dssa">1</h2>
+                    <p>Students</p>
+                </div>
+                <script>
+                    var tag=document.querySelector(".dssa");
+                    var sa=Number(tag.innerHTML);
+            function counter(){
+                sa=sa+10;
+                if(sa>=1100){
+                    sa=1100;
+                }
+            document.querySelector('.dssa').innerHTML=sa;
+            }
+            
+            setInterval(counter,1)
+            
+            </script>
+               
+
+               
+             
+                <div class="col-3">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <h2 class="dasa24">1</h2>
+                    <p>STAFFS</p>
+
+                    <script>
+                        var tag1=document.querySelector(".dasa24");
+                        var sa1=Number(tag.innerHTML);
+                function counter2(){
+                    sa1=sa1+5;
+                    if(sa1>=200){
+                        sa1=200;
+                    }
+                document.querySelector('.dasa24').innerHTML=sa1;
+                }
+                
+                setInterval(counter2,10)
+                
+                </script>
+                </div>
+               
+                <div class="col-3">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <h2 class="skhjfbsh">1</h2>
+                    <p>DEPARTMENTS</p>
+                    <script>
+                        var tag2=document.querySelector(".skhjfbsh");
+                        var sa2=Number(tag.innerHTML);
+                function counter1(){
+                    sa2=sa2+1;
+                    if(sa2>=10){
+                        sa2=10;
+                    }
+                document.querySelector('.skhjfbsh').innerHTML=sa2;
+                }
+                
+                setInterval(counter1,40)
+                
+                </script>
+                </div>
+               
+               
+               
+                <div class="col-3">
+                    <i class="fa-solid fa-person-arrow-up-from-line"></i>
+                    <h2 class="dfhwu">1</h2>
+                    <p>PROGRAMMES</p>
+
+
+
+                    <script>
+                        var tag4=document.querySelector(".dfhwu");
+                        var sa4=Number(tag.innerHTML);
+                function counter4(){
+                    sa4=sa4+1;
+                    if(sa4>=15){
+                        sa4=15;
+                    }
+                document.querySelector('.dfhwu').innerHTML=sa4;
+                }
+                
+                setInterval(counter4,20)
+                
+                </script>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

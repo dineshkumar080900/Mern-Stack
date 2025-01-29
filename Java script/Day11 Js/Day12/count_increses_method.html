@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method in increment</title>
+</head>
+<body>
+    <h1>Please wait few Mininues<h2>10</h2></h1>
+    <script>
+        var tag=document.querySelector("h2");
+        var sa=Number(tag.innerHTML);
+        // alert(sa+23)
+function counter(){
+    sa=sa-1;
+    if(sa<0){
+        sa=0;
+        location.href="Image_zoom.html"
+    }
+document.querySelector('h2').innerHTML=sa;
+}
+
+setInterval(counter,1000)
+
+</script>
+</body>
+</html>
