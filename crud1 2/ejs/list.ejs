@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        table{
+            width:100%;
+            border-collapse:collapse;
+            border:1px solid;
+            text-align:left;
+            text-transform:capitalize;
+        }
+        th,td{
+            border:1px solid;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <a href="/add">Add New Records</a>
+    </div>
+    <table>
+        <% var keys=Object.keys(records[0])%>
+        <% keys.shift() %>
+        <% keys.pop() %>
+
+        <tr>
+            <% keys.map((a)=>{%>
+                <th><%= a %></th>
+            <%}) %>
+            <th>Action</th>
+        </tr>
+        <% records.map((a)=>{ %>
+            <tr>
+                <td><%= a.name%></td>
+                <td><%= a.age%></td>
+                <td><%= a.pwd%></td>
+                <td>
+                    <a href="/view/<%=a._id%>"><i class="fa fa-eye"></i>View</a>
+                    <a href="/edit"><i class="fa fa-edit"></i> Edit</a>
+                    <a href="/delete"><i class="fa fa-trash"></i> Delete</a>
+                </td>
+            </tr>
+        <%}) %>
+    </table>
+</body> 
+</html>
+
+
+
+<script>
+    a.map((a)=>{
+        table=`<tr>${a}</tr>`
+    })
+</script>
