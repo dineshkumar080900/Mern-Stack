@@ -1,0 +1,86 @@
+<!-- const http = require('http');
+const fs = require('fs');
+const path = require('path');
+const multer = require('multer');
+const { parse } = require('url');
+
+// Set up multer storage configuration
+const storage = multer.diskStorage({
+    destination: './Upload',  
+    filename: (req, file, cb) => {
+        cb(null, `IMAGE__${Date.now()}${path.extname(file.originalname)}`);  // Unique file name
+    }
+});
+const upload = multer({ storage: storage });
+
+// Create the HTTP server
+const server = http.createServer((req, res) => {
+    const { pathname } = parse(req.url);
+
+    if (req.method === 'GET' && pathname === '/') {
+        // Serve the HTML form
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(`
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Upload Image</title>
+            </head>
+            <body>
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="image_add">
+                    <input type="submit">
+                </form>
+            </body>
+            </html>
+        `);
+    } else if (req.method === 'POST' && pathname === '/upload') {
+        // Use multer to handle file upload
+        upload.single('image_add')(req, res, (err) => {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                return res.end('Error uploading file.');
+            }
+
+            if (req.file) {
+                const filePath = `http://localhost:3000/Upload/${req.file.filename}`;
+                res.writeHead(200, { 'Content-Type': 'text/html' });
+                res.end(`<img src="${filePath}" alt="" width="200" height="200">`);
+            } else {
+                res.writeHead(400, { 'Content-Type': 'text/plain' });
+                res.end('No file uploaded.');
+            }
+        });
+    } else if (req.method === 'GET' && pathname.startsWith('/Upload/')) {
+        // Serve uploaded images
+        const filePath = path.join(__dirname, decodeURIComponent(pathname));
+        fs.readFile(filePath, (err, data) => {
+            if (err) {
+                res.writeHead(404, { 'Content-Type': 'text/plain' });
+                res.end('File not found');
+            } else {
+                const ext = path.extname(filePath);
+                const contentType = ext === '.jpg' || ext === '.jpeg' ? 'image/jpeg' : 'image/png';
+                res.writeHead(200, { 'Content-Type': contentType });
+                res.end(data);
+            }
+        });
+    } else {
+        // Handle 404 for unknown routes
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('404 Not Found');
+    }
+});
+
+// Create the Upload directory if it doesn't exist
+if (!fs.existsSync('./Upload')) {
+    fs.mkdirSync('./Upload');
+}
+
+// Start the server
+server.listen(3000, () => {
+    console.log('Server listening on http://localhost:3000');
+});
+ -->
